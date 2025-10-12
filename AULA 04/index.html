@@ -4,16 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula 04</title>
-    <script>
-            function somarValores(){
-                    var numero1 = document.getElementById('valor1')
-                    var numero2 = document.getElementById('valor2')
-
-                    var soma = Number(numero1.value) + Number(numero2.value)
-
-                    alert('O resultado é: ' + soma)
-            }
-    </script>
+    <script src="js/somar.js" defer> </script>
 </head>
 <body>
         <h1>Trabalhando com funções no Front-end</h1>
@@ -24,7 +15,7 @@
                 <label>Digite o valor 2:</label>
                 <input type="text" name="txt-valor2" id="valor2">
                 <br>
-                <input type="button" name="btn-calcular" value="Calcular" onclick="somarValores">
+                <input type="button" name="btn-calcular" value="Calcular" onclick="soma()">
         </form>
 </body>
 </html>
