@@ -1,5 +1,0 @@
-core.editor="C:\Users\evnld\AppData\Local\Programs\Microsoft VS Code\bin\code" --wait
-core.autocrlf=true
-user.name=Evanildo Leal
-user.email=evanildo@wfxky.onmicrosoft.com
-credential.helper=manager --always-prompt
