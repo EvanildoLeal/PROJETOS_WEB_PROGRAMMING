@@ -25,12 +25,16 @@
 */    
 // Escopo Global
 const botaoSalvar = document.getElementById('salvar')
-const caixaNome = document.getElementById('nome')
+const nome = document.getElementById('nome')
+const email = document.getElementById('email')
+
+var contadorRegistros = 1
 
 // Função para retirar e validar os dados do formulário
 const getDados = function(){
-    let nome = document.getElementById('nome')
-    let email = document.getElementById('email')
+    // let nome   = document.getElementById('nome')
+    // let email   = document.getElementById('email')
+    let status  = true
 
     // Zera as cores das caixas sempre no inicio de uma validação
     nome.style.backgroundColor = '#ffffff'
@@ -40,12 +44,33 @@ const getDados = function(){
     if(nome.value == ''){
         alert('O campo Nome não pode ser em branco. ')
         nome.style.backgroundColor = '#ed766d'
+        status = false
     }
 
     if(email.value == ''){
         alert('O campo Email não pode ser em branco. ')
         email.style.backgroundColor = '#ed766d'
     }
+
+    return status
+}
+
+//Função para inserir novos dados na lista de clientes
+const setDadosList = function(){
+        // console.log('Processo de listagem de dados')
+        if(contadorRegistros    <=4){
+            let colunaNome = document.getElementById('nome'+contadorRegistros)
+            let colunaEmail = document.getElementById('email'+contadorRegistros)
+
+            colunaNome.innerText = nome.value
+            colunaEmail.innerText  = email.value
+
+            contadorRegistros   +=1
+        }else{
+                alert('Não é possível inserir novos clientes!')    
+        }
+            
+        
 }
 
 // Função para impedir a digitação de números - CORRIGIDA
@@ -59,10 +84,13 @@ const blockNumber = function(tecla){
 
 // Função de evento click para o botão Salvar
 botaoSalvar.addEventListener('click', function(){
-    getDados()
+    //Se os dados estiverem OK, então iremos chamar a função para listar os dados
+    if  (getDados()){
+        setDadosList()
+    }
 });
 
-caixaNome.addEventListener('keypress', function(event){
+nome.addEventListener('keypress', function(event){
     // Se blockNumber retornar false, previne a digitação
     if(blockNumber(event) === false){
         event.preventDefault() 
