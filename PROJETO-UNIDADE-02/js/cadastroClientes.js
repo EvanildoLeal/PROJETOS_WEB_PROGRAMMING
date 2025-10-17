@@ -94,8 +94,8 @@ const resetDados = function(){
         let colunaNome = document.getElementById('nome'+contador)
         let colunaEmail = document.getElementById('email'+contador)
 
-        colunaNome.innerText = ''
-        colunaEmail.innerText = ''
+        colunaNome.innerText = ' '
+        colunaEmail.innerText = ' '
 
         contador +=1
     }
