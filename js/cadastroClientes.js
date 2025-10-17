@@ -23,33 +23,36 @@
             String()
 
 */    
-// Escopo Global
-const botaoSalvar = document.getElementById('salvar')
-const nome = document.getElementById('nome')
-const email = document.getElementById('email')
+///Escopo Global
+const botaoSalvar   = document.getElementById('salvar')
+const botaoLimpar   = document.getElementById('limpar')
+
+const nome    = document.getElementById('nome')
+const email   = document.getElementById('email')
 
 var contadorRegistros = 1
 
-// Função para retirar e validar os dados do formulário
+
+//Função para retirar e validar os dados do formulário
 const getDados = function(){
-    // let nome   = document.getElementById('nome')
-    // let email   = document.getElementById('email')
+
     let status  = true
 
-    // Zera as cores das caixas sempre no inicio de uma validação
+    //Zera as cores das caixas sempre no inicio de uma validação
     nome.style.backgroundColor = '#ffffff'
     email.style.backgroundColor = '#ffffff'
-    
-    // Validação de Dados
+
+    //Validação de dados
     if(nome.value == ''){
-        alert('O campo Nome não pode ser em branco. ')
+        alert('O campo Nome não pode ser em branco.')
         nome.style.backgroundColor = '#ed766d'
         status = false
     }
 
     if(email.value == ''){
-        alert('O campo Email não pode ser em branco. ')
+        alert('O campo Email não pode ser em branco.')
         email.style.backgroundColor = '#ed766d'
+        status = false
     }
 
     return status
@@ -57,43 +60,67 @@ const getDados = function(){
 
 //Função para inserir novos dados na lista de clientes
 const setDadosList = function(){
-        // console.log('Processo de listagem de dados')
-        if(contadorRegistros    <=4){
-            let colunaNome = document.getElementById('nome'+contadorRegistros)
-            let colunaEmail = document.getElementById('email'+contadorRegistros)
 
-            colunaNome.innerText = nome.value
-            colunaEmail.innerText  = email.value
+    if(contadorRegistros <= 4){
+        let colunaNome   = document.getElementById('nome'+contadorRegistros)
+        let colunaEmail  = document.getElementById('email'+contadorRegistros)
 
-            contadorRegistros   +=1
-        }else{
-                alert('Não é possível inserir novos clientes!')    
-        }
-            
-        
+        colunaNome.innerText  = nome.value
+        colunaEmail.innerText = email.value
+
+        contadorRegistros += 1
+    }else{
+        alert('Não é possível inserir novos clientes!')
+    }
 }
 
-// Função para impedir a digitação de números - CORRIGIDA
+//Função para impedir a digitação de números
 const blockNumber = function(tecla){
-    // Verifica se é um número (0-9)
-    if (tecla.charCode >= 48 && tecla.charCode <= 57){
-        return false // Bloqueia números
+    if (tecla.charCode >=48 && tecla.charCode <=57){
+        return false
     }
-    return true // Permite outros caracteres
 }
 
-// Função de evento click para o botão Salvar
-botaoSalvar.addEventListener('click', function(){
-    //Se os dados estiverem OK, então iremos chamar a função para listar os dados
-    if  (getDados()){
-        setDadosList()
-    }
-});
+//Função de limpar dados
+const resetDados = function(){
+    //Limpar dados do form
+    nome.value  = ''
+    email.value = ''
 
-nome.addEventListener('keypress', function(event){
-    // Se blockNumber retornar false, previne a digitação
-    if(blockNumber(event) === false){
-        event.preventDefault() 
+    //Limpar dados da lista de clientes
+    let contador = 1
+    while(contador <= 4){
+
+        let colunaNome = document.getElementById('nome'+contador)
+        let colunaEmail = document.getElementById('email'+contador)
+
+        colunaNome.innerText = ''
+        colunaEmail.innerText = ''
+
+        contador +=1
+    }
+
+    contadorRegistros = 1
+}
+
+
+//função de evento click para o botão Salvar
+botaoSalvar.addEventListener('click', function(){
+    //Se os dados estiverem ok, então iremos chamar a função para listar os dados
+    if (getDados()){
+        setDadosList()
     }
 })
 
+botaoLimpar.addEventListener('click', function(){
+    let result = confirm('Deseja realmente limpar os dados do cadastro (formulário e lista de clientes)?')
+    if(result){
+        resetDados()
+    }
+})
+
+nome.addEventListener('keypress', function(event){
+    if(blockNumber(event) == false){
+        event.preventDefault() //Cancelar o evento
+    }
+})
