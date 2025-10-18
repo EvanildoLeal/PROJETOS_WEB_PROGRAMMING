@@ -129,3 +129,56 @@ h1{
     height: 40px;
     background-color: #ffffff;
 }
+
+footer {
+    height: auto; /* Alterado de 20px para auto */
+    text-align: center;
+    font-weight: bold;
+    font-family: verdana;
+    padding: 20px 0; /* Adicionado padding */
+    background-color: rgba(0, 0, 0, 0.1); /* Opcional: para melhor visualização */
+}
+
+.footer-content {
+    display: flex; /* Adicionado display flex */
+    justify-content: space-between; /* Distribui os elementos */
+    align-items: center; /* Centraliza verticalmente */
+    max-width: 1200px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 20px; /* Padding lateral */
+}
+
+.footer-logo {
+    flex: 1; /* Ocupa 1 parte do espaço */
+    text-align: left;
+}
+
+.footer-info {
+    flex: 2; /* Ocupa 2 partes do espaço */
+    text-align: center;
+}
+
+.footer-links {
+    flex: 1; /* Ocupa 1 parte do espaço */
+    text-align: right;
+}
+
+.logo-image {
+    max-height: 40px; /* Controla o tamanho da logo */
+    width: auto;
+}
+
+.footer-info p {
+    margin: 5px 0; /* Espaçamento entre parágrafos */
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.1em;
+}
+
+.footer-links a:hover {
+    color: chocolate; /* Cor do hover igual ao título */
+}
+
