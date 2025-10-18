@@ -26,18 +26,13 @@
     */
 
 
-// Elementos do DOM
+// Escopo Global
 const botaoSalvar = document.getElementById('salvar');
 const botaoLimpar = document.getElementById('limpar');
-const botaoLimparTodos = document.getElementById('limparTodos');
 const nome = document.getElementById('nome');
 const email = document.getElementById('email');
-const corpoTabela = document.getElementById('corpo-tabela');
-const contador = document.getElementById('contador');
-const linhaVazia = document.getElementById('linha-vazia');
 
-// Contador de clientes
-let totalClientes = 0;
+let contadorRegistros   =   1;
 
 // Função para atualizar o contador
 const atualizarContador = function() {

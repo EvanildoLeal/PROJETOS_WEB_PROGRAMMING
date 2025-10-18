@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 01 - JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .output {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏗️ Aula 01 - JavaScript</h1>
+        
+        <div class="output">
+            <h3>📊 Console Methods (Abra o Console F12)</h3>
+            <button onclick="testarConsoleMethods()">Testar Console Methods</button>
+        </div>
+
+        <div class="output">
+            <h3>👤 Formulário Simples</h3>
+            <button onclick="formularioSimples()">Abrir Formulário</button>
+        </div>
+
+        <div class="output">
+            <h3>🧮 Calculadora Interativa</h3>
+            <button onclick="calculadoraInterativa()">Abrir Calculadora</button>
+        </div>
+
+        <div class="output">
+            <h3>📋 Sistema de Menu</h3>
+            <button onclick="sistemaMenu()">Abrir Menu</button>
+        </div>
+
+        <div class="output">
+            <h3>🔍 Debug Info</h3>
+            <div id="debugInfo"></div>
+        </div>
+    </div>
+
+    <script>
+        // ========== CONSOLE METHODS ==========
+        function testarConsoleMethods() {
+            console.clear(); // Limpa o console
+            
+            // Console.dir para objetos
+            let obj = { nome: "Maria", endereco: { rua: "ABC", numero: 123 } };
+            console.log("📁 Console.dir - Objeto:");
+            console.dir(obj);
+
+            // Console.trace para rastreamento
+            console.log("🕵️ Console.trace - Rastreamento:");
+            function funcaoA() {
+                funcaoB();
+            }
+            function funcaoB() {
+                console.trace("Rastreamento da chamada");
+            }
+            funcaoA();
+
+            // Console.time para performance
+            console.log("⏱️ Console.time - Performance:");
+            console.time("tempoProcessamento");
+            for (let i = 0; i < 1000000; i++) {}
+            console.timeEnd("tempoProcessamento");
+
+            // Console.count para contagem
+            console.log("🔢 Console.count - Contagem:");
+            for (let i = 0; i < 3; i++) {
+                console.count("Loop executado");
+            }
+
+            // Console.assert para testes
+            console.log("✅ Console.assert - Testes:");
+            let valor = 10;
+            console.assert(valor > 5, "Valor deve ser maior que 5");
+            console.assert(valor < 5, "Valor deve ser menor que 5"); // Irá falhar
+
+            alert("Console methods testados! Abra o console (F12) para ver os resultados.");
+        }
+
+        // ========== FORMULÁRIO SIMPLES ==========
+        function formularioSimples() {
+            let nome = prompt("👤 Qual seu nome?");
+            if (!nome) return; // Se usuário cancelar
+            
+            let idade = prompt("🎂 Qual sua idade?");
+            if (!idade) return;
+            
+            let email = prompt("📧 Qual seu e-mail?");
+            if (!email) return;
+
+            let confirmacao = confirm(`
+✅ Confirme seus dados:
+📝 Nome: ${nome}
+🎂 Idade: ${idade}
+📧 E-mail: ${email}
+
+Está correto?
+            `);
+
+            if (confirmacao) {
+                alert("🎉 Cadastro realizado com sucesso!");
+                console.log("📋 Usuário cadastrado:", { nome, idade, email });
+                document.getElementById('debugInfo').innerHTML = `
+                    <p><strong>Último usuário cadastrado:</strong></p>
+                    <p>Nome: ${nome}</p>
+                    <p>Idade: ${idade}</p>
+                    <p>E-mail: ${email}</p>
+                `;
+            } else {
+                alert("🔄 Vamos começar novamente...");
+                formularioSimples(); // Recursão para tentar novamente
+            }
+        }
+
+        // ========== CALCULADORA INTERATIVA ==========
+        function calculadoraInterativa() {
+            let num1 = parseFloat(prompt("🔢 Digite o primeiro número:"));
+            if (isNaN(num1)) {
+                alert("❌ Por favor, digite um número válido!");
+                return;
+            }
+
+            let num2 = parseFloat(prompt("🔢 Digite o segundo número:"));
+            if (isNaN(num2)) {
+                alert("❌ Por favor, digite um número válido!");
+                return;
+            }
+
+            let operacao = prompt("➗ Digite a operação (+, -, *, /):");
+            
+            let resultado;
+            let operacaoValida = true;
+            
+            switch (operacao) {
+                case '+': 
+                    resultado = num1 + num2; 
+                    break;
+                case '-': 
+                    resultado = num1 - num2; 
+                    break;
+                case '*': 
+                    resultado = num1 * num2; 
+                    break;
+                case '/': 
+                    if (num2 === 0) {
+                        alert("❌ Não é possível dividir por zero!");
+                        return;
+                    }
+                    resultado = num1 / num2; 
+                    break;
+                default: 
+                    resultado = "Operação inválida";
+                    operacaoValida = false;
+            }
+
+            if (operacaoValida) {
+                alert(`🎯 Resultado: ${num1} ${operacao} ${num2} = ${resultado}`);
+                console.log(`🧮 Cálculo: ${num1} ${operacao} ${num2} = ${resultado}`);
+            } else {
+                alert("❌ Operação inválida! Use +, -, * ou /");
+            }
+        }
+
+        // ========== SISTEMA DE MENU ==========
+        function sistemaMenu() {
+            let opcao;
+            let usuarios = [];
+            
+            do {
+                opcao = prompt(`
+📋 Menu Principal:
+
+1 - 👤 Cadastrar usuário
+2 - 📊 Listar usuários  
+3 - 🚪 Sair
+
+Escolha uma opção:
+                `);
+
+                switch (opcao) {
+                    case "1":
+                        let nome = prompt("👤 Nome do usuário:");
+                        if (nome) {
+                            usuarios.push(nome);
+                            console.log(`✅ Usuário ${nome} cadastrado.`);
+                            alert(`✅ Usuário ${nome} cadastrado com sucesso!`);
+                        }
+                        break;
+                    case "2":
+                        if (usuarios.length === 0) {
+                            alert("📭 Nenhum usuário cadastrado ainda.");
+                        } else {
+                            let lista = "📊 Usuários cadastrados:\n\n";
+                            usuarios.forEach((user, index) => {
+                                lista += `${index + 1}. ${user}\n`;
+                            });
+                            alert(lista);
+                            console.log("📋 Listando usuários:", usuarios);
+                        }
+                        break;
+                    case "3":
+                        alert("👋 Saindo do sistema...");
+                        console.log("🚪 Sistema encerrado.");
+                        break;
+                    default:
+                        if (opcao !== null) {
+                            alert("❌ Opção inválida! Use 1, 2 ou 3.");
+                        }
+                }
+            } while (opcao !== "3" && opcao !== null);
+        }
+
+        // Mensagem inicial
+        console.log("🚀 Aula 01 JavaScript - Página carregada!");
+        console.log("💡 Use os botões para interagir com as funcionalidades.");
+    </script>
+</body>
+</html>
