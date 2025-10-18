@@ -1,111 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sistema de cadastro de clientes">
-    <title>Sistema de cadastro  - Web   Programming</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sistema de cadastro de clientes" />
+    <title>Sistema de cadastro - Web Programming</title>
+    <link rel="icon" type="image/png" href="images/logo_unifecaf.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="js/cadastroCliente.js" defer></script>
-</head>
-<body>
-        <!-- Cabeçalho -->
-         <header>
-                <div    class="header-content">
-                            <h1>Exercício   -   Web Programming</h1>
-                            <p>Sistema de Cadastro de Clientes</p>
-                </div>
-         </header>
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header>
+      <div class="header-content">
+        <h1>Exercício - Web Programming</h1>
+        <p>Sistema de Cadastro de Clientes</p>
+      </div>
+    </header>
 
-         <!-- Navegação -->
-         <nav>
-                    <ul class="navigation-menu">
-                        <li><a href="#cadastro"     class="nav-link">Cadastro</a></li>
-                        <li><a href="#lista" class="nav-link">Lista de Clientes</a></li>
-                        <li><a href="#sobre"               class="nav-link">Sobre</a></li>
-                    </ul>
-         </nav>
+    <!-- Navegação -->
+    <nav>
+      <ul class="navigation-menu">
+        <li><a href="#cadastro" class="nav-link">Cadastro</a></li>
+        <li><a href="#lista" class="nav-link">Lista de Clientes</a></li>
+        <li><a href="#sobre" class="nav-link">Sobre</a></li>
+      </ul>
+    </nav>
 
-         <!-- Conteúdo Principal -->
-          <main>
-                    <!-- Seção de Cadastro -->
-                     <section   id="cadastro" class="content-section">
-                            <div id="conteudo">
-                                    <h2 class="titulo">
-                                            <i  class="icon-cadastro"></i>CADASTRO DE CLIENTES
-                                    </h2>
-                                    <div    id="form">
-                                            <form name="frm_clientes"   method="get" action="">
-                                                <div    class="form-group">
-                                                        <label for="nome">Nome:</label>
-                                                        <input type="text"  name="txt_nome" id="nome"   class="valor"   placeholder="Nome do Cliente"   required>
-                                                </div>
+    <!-- Conteúdo Principal -->
+    <main>
+      <!-- Seção de Cadastro -->
+      <section id="cadastro" class="content-section">
+        <div id="conteudo">
+          <h2 class="titulo">
+            <i class="icon-cadastro"></i>CADASTRO DE CLIENTES
+          </h2>
+          <div id="form">
+            <form name="frm_clientes" method="get" action="">
+              <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input
+                  type="text"
+                  name="txt_nome"
+                  id="nome"
+                  class="valor"
+                  placeholder="Nome do Cliente"
+                  required
+                />
+              </div>
 
-                                                <div    class="form-group">
-                                                        <label for="email">E-mail:</label>
-                                                        <input type="email" name="txt_email" id="email" class="valor" placeholder="nome@email.com" required>
-                                                </div>
+              <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input
+                  type="email"
+                  name="txt_email"
+                  id="email"
+                  class="valor"
+                  placeholder="nome@email.com"
+                  required
+                />
+              </div>
 
-                                                <div    class="form-buttons">
-                                                            <input type="button" name="btnSalvar"   id="salvar" value="Salvar"  class="botao">
-                                                            <input type="button"    name="btnLimpar" id="limpar" value="Limpar" class="botao">
-                                                </div>
-                                            </form>
-                                    </div>
-                            </div>
-                     </section>
+              <div class="form-buttons">
+                <input
+                  type="button"
+                  name="btnSalvar"
+                  id="salvar"
+                  value="Salvar"
+                  class="botao"
+                />
+                <input
+                  type="button"
+                  name="btnLimpar"
+                  id="limpar"
+                  value="Limpar"
+                  class="botao"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
 
-                     <!-- Seção da Lista de Clientes-->
-                      <section  id="lista"  class="content-section">
-                            <div    id="conteudo_tabela">
-                                    <h2 class="titulo">
-                                            <i  class="icon-lista">LISTA DE CLIENTES</i>
-                                    </h2>
-                                    <div    class="table-container">
-                                            <table id="resultado">
-                                                <thead>
-                                                        <tr class="tabela_titulos">
-                                                                <th id="titulo_nome">Nome</th>
-                                                                <th id="titulo_email">E-mail</th>
-                                                        </tr>
-                                                </thead>
-                                                <tbody id="corpo-tabela">
-                                                        <!-- As Linhas adicionais serão adicionadas dinamicamente aqui -->
-                                                </tbody>
-                                            </table>
-                                    </div>
-                            </div>
-                      </section>
+      <!-- Seção da Lista de Clientes-->
+      <section id="lista" class="content-section">
+        <div id="conteudo_tabela">
+          <h2 class="titulo">
+            <i class="icon-lista">LISTA DE CLIENTES</i>
+          </h2>
+          <div class="table-container">
+            <table id="resultado">
+              <thead>
+                <tr class="tabela_titulos">
+                  <th id="titulo_nome">Nome</th>
+                  <th id="titulo_email">E-mail</th>
+                </tr>
+              </thead>
+              <tbody id="corpo-tabela">
+                <!-- As Linhas adicionais serão adicionadas dinamicamente aqui -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
 
-                      <!-- Seção Sobre-->
-                       <section id="sobre"  class="content-section">
-                                <div    class="about-content">
-                                        <h2 class="titulo">Sobre o Sistema</h2>
-                                        <p>Este é um Sistema de cadastro deesenvolvido para a disciplina de Web Programming.</p>
-                                        <p>Funcionalidades</p>
-                                        <ul>
-                                                <li>Cadastro de novos clientes</li>
-                                                <li>Listagem dinâmica de clientes</li>
-                                                <li>Validação de dados</li>
-                                                <li>Interface responsiva</li>
-                                        </ul>
-                                </div>
-                       </section>
+      <!-- Seção Sobre-->
+      <section id="sobre" class="content-section">
+        <div class="about-content">
+          <h2 class="titulo">Sobre o Sistema</h2>
+          <p>
+            Este é um Sistema de cadastro deesenvolvido para a disciplina de Web
+            Programming.
+          </p>
+          <p>Funcionalidades</p>
+          <ul>
+            <li>Cadastro de novos clientes</li>
+            <li>Listagem dinâmica de clientes</li>
+            <li>Validação de dados</li>
+            <li>Interface responsiva</li>
+          </ul>
+        </div>
+      </section>
 
-                       <!-- Rodapé -->
-                        <footer>
-                            <div    class="footer-content">
-                                    <div    class="footer-info">
-                                            <p>&copy; 2025 Web Programming  -   Professor Marcel Neves Teixiera</p>                                 
-                                            <p>Desenvolvido por:    Evanildo Leal</p>
-                                    </div>
-                                    <div    class="footer-links">
-                                            <a href="https://github.com/EvanildoLeal/PROJETOS_WEB_PROGRAMMING.git" target="_blank">
-                                                    Repositório GitHub
-                                            </a>
-                                    </div>
-                            </div>
-                        </footer>
-          </main>
-</body>
+      <!-- Rodapé -->
+      <footer>
+        <div class="footer-content">
+    <!-- Logo à esquerda -->
+    <div class="footer-logo">
+        <img
+            src="images/logo_unifecaf.png"
+            alt="UniFECAF"
+            class="logo-image"
+        />
+    </div>
+
+    <!-- Informações no centro -->
+    <div class="footer-info">
+        <p>&copy; 2025 Web Programming - Professor Marcel Neves Teixeira</p>
+        <p>Desenvolvido por: Evanildo Leal</p>
+    </div>
+
+    <!-- Links à direita -->
+    <div class="footer-links">
+        <a
+            href="https://github.com/EvanildoLeal/PROJETOS_WEB_PROGRAMMING.git"
+            target="_blank"
+            aria-label="Repositório no GitHub"
+        >
+            📁 GitHub
+        </a>
+    </div>
+    </div>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
 </html>
