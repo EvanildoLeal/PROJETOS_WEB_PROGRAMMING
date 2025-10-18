@@ -1,5 +1,4 @@
-/**/
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,42 +11,42 @@ body {
     background-color: #f4f4f4;
 }
 
-/*  Header*/
-header  {
-    background: linear-gradient(135deg, #2c3e50,    #3498db);
+/* Header */
+header {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
     color: white;
-    padding: 2rem   0;
+    padding: 2rem 0;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.header-content h1  {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
+.header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.header-content p   {
-        font-size: 1.1rem;
-        opacity: 0.9;
+.header-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
 }
 
 /* Navigation */
 nav {
     background-color: #34495e;
-    padding: 1rem   0;
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-.navigation-menu    {
+.navigation-menu {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 2rem;
 }
 
-.nav-link   {
+.nav-link {
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
@@ -55,71 +54,87 @@ nav {
     transition: background-color 0.3s;
 }
 
-.nav-link :hover    {
-        background-color: #3498db;
+.nav-link:hover {
+    background-color: #3498db;
 }
 
 /* Main Content */
-main    {
+main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-.content-section    {
+.content-section {
     background-color: white;
     margin-bottom: 2rem;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0   2px 10px    rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .titulo {
     color: #2c3e50;
     margin-bottom: 1.5rem;
-    border-bottom: 2px  solid   #3498db;
+    border-bottom: 2px solid #3498db;
     padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.titulo i {
+    font-style: normal;
+    background: #3498db;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
 }
 
 /* Form Styles */
-.form-group     {
-        margin-bottom: 1rem;
+.form-group {
+    margin-bottom: 1rem;
 }
 
-.form-group label   {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: bold;
-        color: #2c3e50;
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #2c3e50;
 }
 
-.valor  {
+.valor {
     width: 100%;
     padding: 0.75rem;
-    border: 2px solid   #ddd;
+    border: 2px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
     transition: border-color 0.3s;
 }
 
-.valor :focus   {
-        outline: none;
-        border-color: #3498db;
+.valor:focus {
+    outline: none;
+    border-color: #3498db;
 }
 
-.form-buttons   {
+.form-buttons {
     display: flex;
-    gap: 1rem; 
+    gap: 1rem;
     margin-top: 1.5rem;
 }
 
-.botao  {
+.botao {
     padding: 0.75rem 2rem;
     border: none;
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color    0.3s;
+    transition: background-color 0.3s;
 }
 
 #salvar {
@@ -127,7 +142,7 @@ main    {
     color: white;
 }
 
-#salvar:hover   {
+#salvar:hover {
     background-color: #219a52;
 }
 
@@ -136,44 +151,75 @@ main    {
     color: white;
 }
 
-#limpar :hover  {
+#limpar:hover {
     background-color: #c0392b;
 }
 
+#limparTodos {
+    background-color: #e67e22;
+    color: white;
+}
+
+#limparTodos:hover {
+    background-color: #d35400;
+}
+
 /* Table Styles */
-.table-container    {
+.table-container {
     overflow-x: auto;
 }
 
-table   {
+table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
 }
 
-.tabela_titulos     {
+.tabela_titulos {
     background-color: #34495e;
     color: white;
 }
 
-th, td  {
+th, td {
     padding: 1rem;
     text-align: left;
-    border-bottom: 1px  solid   #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
-tbody tr :hover {
+tbody tr:hover {
     background-color: #f8f9fa;
 }
 
-/* About section */
-.about-content  ul  {
-        margin-left: 2rem;
-        margin-top: 1rem;
+.btn-excluir {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.about-content  li  {
+.btn-excluir:hover {
+    background-color: #c0392b;
+}
+
+/* About section */
+.about-content ul {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.about-content li {
     margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem 0;
+    margin-top: 2rem;
 }
 
 .footer-logo {
@@ -184,13 +230,21 @@ tbody tr :hover {
 }
 
 .logo-image {
-    height: 50px; /* Altura fixa */
-    width: auto; /* Largura automática proporcional */
-    transition: transform 0.3s ease; /* Efeito hover opcional */
+    height: 50px;
+    width: auto;
+    background: #fff;
+    color: #2c3e50;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
 }
 
 .logo-image:hover {
-    transform: scale(1.05); /* Efeito de zoom suave */
+    transform: scale(1.05);
 }
 
 .footer-content {
@@ -224,6 +278,36 @@ tbody tr :hover {
     text-decoration: underline;
 }
 
+/* Mensagem de sucesso */
+.mensagem-sucesso {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #27ae60;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-20px); }
+    20% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Contador de clientes */
+.contador-clientes {
+    background: #3498db;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
 /* Para mobile */
 @media (max-width: 768px) {
     .navigation-menu {
@@ -236,7 +320,7 @@ tbody tr :hover {
         height: 35px;
     }
 
-    .form-buttons   {
+    .form-buttons {
         flex-direction: column;
     }
 
@@ -246,12 +330,11 @@ tbody tr :hover {
         text-align: center;
     }
 
-    main    {
+    main {
         padding: 1rem;
     }
 
-    .content-section    {
+    .content-section {
         padding: 1rem;
     }
-    
 }

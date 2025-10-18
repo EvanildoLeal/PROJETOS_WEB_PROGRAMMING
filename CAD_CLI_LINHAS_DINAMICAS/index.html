@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Sistema de cadastro de clientes" />
     <title>Sistema de cadastro - Web Programming</title>
-    <link rel="icon" type="image/png" href="images/logo_unifecaf.png">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="js/cadastroCliente.js" defer></script>
   </head>
@@ -33,7 +32,7 @@
       <section id="cadastro" class="content-section">
         <div id="conteudo">
           <h2 class="titulo">
-            <i class="icon-cadastro"></i>CADASTRO DE CLIENTES
+            <i class="icon-cadastro">+</i>CADASTRO DE CLIENTES
           </h2>
           <div id="form">
             <form name="frm_clientes" method="get" action="">
@@ -73,7 +72,14 @@
                   type="button"
                   name="btnLimpar"
                   id="limpar"
-                  value="Limpar"
+                  value="Limpar Formulário"
+                  class="botao"
+                />
+                <input
+                  type="button"
+                  name="btnLimparTodos"
+                  id="limparTodos"
+                  value="Limpar Todos"
                   class="botao"
                 />
               </div>
@@ -86,7 +92,7 @@
       <section id="lista" class="content-section">
         <div id="conteudo_tabela">
           <h2 class="titulo">
-            <i class="icon-lista">LISTA DE CLIENTES</i>
+            <i class="icon-lista">≡</i>LISTA DE CLIENTES <span id="contador" class="contador-clientes">0 clientes</span>
           </h2>
           <div class="table-container">
             <table id="resultado">
@@ -94,10 +100,16 @@
                 <tr class="tabela_titulos">
                   <th id="titulo_nome">Nome</th>
                   <th id="titulo_email">E-mail</th>
+                  <th id="titulo_acoes">Ações</th>
                 </tr>
               </thead>
               <tbody id="corpo-tabela">
                 <!-- As Linhas adicionais serão adicionadas dinamicamente aqui -->
+                <tr id="linha-vazia">
+                  <td colspan="3" style="text-align: center; padding: 2rem; color: #7f8c8d;">
+                    Nenhum cliente cadastrado ainda
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -107,16 +119,19 @@
       <!-- Seção Sobre-->
       <section id="sobre" class="content-section">
         <div class="about-content">
-          <h2 class="titulo">Sobre o Sistema</h2>
+          <h2 class="titulo">
+            <i class="icon-sobre">ⓘ</i>Sobre o Sistema
+          </h2>
           <p>
-            Este é um Sistema de cadastro deesenvolvido para a disciplina de Web
-            Programming.
+            Este é um Sistema de cadastro desenvolvido para a disciplina de Web Programming.
           </p>
-          <p>Funcionalidades</p>
+          <p><strong>Funcionalidades:</strong></p>
           <ul>
             <li>Cadastro de novos clientes</li>
             <li>Listagem dinâmica de clientes</li>
             <li>Validação de dados</li>
+            <li>Exclusão individual de clientes</li>
+            <li>Limpeza seletiva ou total</li>
             <li>Interface responsiva</li>
           </ul>
         </div>
@@ -125,32 +140,25 @@
       <!-- Rodapé -->
       <footer>
         <div class="footer-content">
-    <!-- Logo à esquerda -->
-    <div class="footer-logo">
-        <img
-            src="images/logo_unifecaf.png"
-            alt="UniFECAF"
-            class="logo-image"
-        />
-    </div>
+          <!-- Logo à esquerda -->
+          <div class="footer-logo">
+            <div class="logo_unifecaf">UNIFECAF</div>
+          </div>
 
-    <!-- Informações no centro -->
-    <div class="footer-info">
-        <p>&copy; 2025 Web Programming - Professor Marcel Neves Teixeira</p>
-        <p>Desenvolvido por: Evanildo Leal</p>
-    </div>
+          <!-- Informações no centro -->
+          <div class="footer-info">
+            <p>&copy; 2025 Web Programming - Professor Marcel Neves Teixeira</p>
+            <p>Desenvolvido por: Evanildo Leal</p>
+          </div>
 
-    <!-- Links à direita -->
-    <div class="footer-links">
-        <a
-            href="https://github.com/EvanildoLeal/PROJETOS_WEB_PROGRAMMING.git"
-            target="_blank"
-            aria-label="Repositório no GitHub"
-        >
-            📁 GitHub
-        </a>
-    </div>
-    </div>
+          <!-- Links à direita -->
+          <div class="footer-links">
+            <a
+              href="https://github.com/EvanildoLeal/PROJETOS_WEB_PROGRAMMING.git"
+              target="_blank"
+              aria-label="Repositório no GitHub"
+            >
+              📁 GitHub
             </a>
           </div>
         </div>
