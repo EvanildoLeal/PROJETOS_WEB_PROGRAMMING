@@ -1,29 +1,26 @@
-/**********************************************************************************************************************************************
- *  Objetivo: Manipular dados de cadastro e listagem de dados
- * Data: 15/10/2025
- * Autor: Evanildo Leal
+/*************************************************************************************************
+ * Objetivo: Manipular dados de cadastro e listagem de dados
+ * Data: 16/01/2025
+ * Autor: Marcel Neves Teixeira
  * Versão: 1.0
- * https://github.com/EvanildoLeal/PROJETOS_WEB_PROGRAMMING.git
- *************************************************************************************************************************************************/         
-
+ * Git: https://github.com/marcelnt/curso-ead-unifecaf
+ ************************************************************************************************/
 /*
     var - Cria uma variavel/objeto (metodo mais antigo)
-
-    let - Cria uma variavel/objeto de nível de escopo local do projeto (cria dentro de uma função)
-
-    const - Cria uma constante de nível de escopo local ou global no projeto
+    let - Cria uma variavel/objeto de nivel de escopo local no projeto
+    const - Cria uma constante de nivel de escopo local ou global no projeto
 
     Conversão de dados
         String para número
             Number()
-            parsenInt()
+            parseInt()
             parseFloat()
-
-        Numero para String
+        
+        Numero para string
             String()
+*/
 
-*/    
-///Escopo Global
+//Escopo Global
 const botaoSalvar   = document.getElementById('salvar')
 const botaoLimpar   = document.getElementById('limpar')
 
@@ -94,8 +91,8 @@ const resetDados = function(){
         let colunaNome = document.getElementById('nome'+contador)
         let colunaEmail = document.getElementById('email'+contador)
 
-        colunaNome.innerText = ' '
-        colunaEmail.innerText = ' '
+        colunaNome.innerText = ''
+        colunaEmail.innerText = ''
 
         contador +=1
     }
