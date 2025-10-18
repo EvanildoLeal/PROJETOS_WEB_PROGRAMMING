@@ -230,13 +230,21 @@ footer {
 }
 
 .logo-image {
-    height: 40px; /* Altura fixa */
-    width: auto; /* Largura automática proporcional */
-    transition: transform 0.3s ease; /* Efeito hover opcional */
+    height: 50px;
+    width: auto;
+    background: #fff;
+    color: #2c3e50;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
 }
 
 .logo-image:hover {
-    transform: scale(1.05); /* Efeito de zoom suave */
+    transform: scale(1.05);
 }
 
 .footer-content {
@@ -269,7 +277,6 @@ footer {
     color: #2980b9;
     text-decoration: underline;
 }
-
 
 /* Mensagem de sucesso */
 .mensagem-sucesso {

@@ -6,33 +6,19 @@
  * versão 1.0
  * https://github.com/EvanildoLeal/PROJETOS_WEB_PROGRAMMING.git
  ***********************************************************************************************************/
-/*
-        var     -     Cria uma variável/objeto    (método mais antigo)
 
-        let     -     Cria uma variável/objeto de nível de escopo Local do projeto (cria dentro de uma função)
-
-        const   -     Cria uma constate de nível de escopo Local ou global no projeto
-        
-        Conversão de dados
-
-                String para número
-                    Number( )
-                    parsent( )
-                    parseFloat( )
-
-                    Número para String
-
-                    String
-    */
-
-
-// Escopo Global
+// Elementos do DOM
 const botaoSalvar = document.getElementById('salvar');
 const botaoLimpar = document.getElementById('limpar');
+const botaoLimparTodos = document.getElementById('limparTodos');
 const nome = document.getElementById('nome');
 const email = document.getElementById('email');
+const corpoTabela = document.getElementById('corpo-tabela');
+const contador = document.getElementById('contador');
+const linhaVazia = document.getElementById('linha-vazia');
 
-let contadorRegistros   =   1;
+// Contador de clientes
+let totalClientes = 0;
 
 // Função para atualizar o contador
 const atualizarContador = function() {
