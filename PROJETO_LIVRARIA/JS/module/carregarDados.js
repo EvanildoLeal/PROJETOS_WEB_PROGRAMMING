@@ -4,6 +4,8 @@
  * Data: 20/10/2025
  * Autor:   Evanildo Leal
  * Versão:  1.0 
+ *  Git: https://github.com/marcelnt/curso-ead-unifecaf.git
+ *  URL da API: https://app-livraria-2024-gsc9e3gcdsh2f2b5.brazilsouth-01.azurewebsites.net/v2/livraria/livros
  ***********************************************************************************************************************************************/
 
 import  { livros    }   from    "./livros.js";
@@ -52,8 +54,19 @@ const    setCreateCard        =   function    (bibliotecaLivros){
 
             })
 
-}                                                                       
+} 
+
+const   getDadosLivrosAPI   =   async   function(){
+        let url     =   'https://app-livraria-2024-gsc9e3gcdsh2f2b5.brazilsouth-01.azurewebsites.net/v2/livraria/livros'
+
+        let response    =   await   fetch(url)
+
+        let dados         =   await  response.json()
+
+        setCreateCard(dados)
+}
 
 window.addEventListener('load', function(){
     setCreateCard(livros)
+    getDadosLivrosAPI()
 })
