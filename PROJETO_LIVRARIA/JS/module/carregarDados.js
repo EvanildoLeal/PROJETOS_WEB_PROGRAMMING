@@ -15,13 +15,13 @@ const    setCreateCard        =   function    (bibliotecaLivros){
 
         bibliotecaLivros[0].books.forEach(function(itemLivro){
             //Cria elementos no HTML
-            let divCaixa_produto      = document.createElement('div')
+            let divCaixa_produto       = document.createElement('div')
             let h2Caixa_titulo            = document.createElement('h2')
             let figureCaixa_imagem  = document.createElement('figure')
             let imgProduto               = document.createElement('img')
             let divCaixa_texto           = document.createElement('div')
-            let pTextoProduto           = document.createElement('p')
-            let divComprar                = document.createElement('div')
+            let pTextoProduto          = document.createElement('p')
+            let divComprar               = document.createElement('div')
 
             
             //Adiciona um atributo ao elemento do HTML
